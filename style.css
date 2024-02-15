@@ -35,18 +35,7 @@ img {
     margin-top: 10px;
 }
 
-#left {
-    /* margin-top: -7.1111vh; */
-    
-}
-#right {
-    /* margin-left: 10.25vw;
-    margin-top: -7.1111vh; */
-}
-#bib {
-    /* margin-left: 17.50vw;
-    margin-top: -7.1111vh; */
-}
+
 .flex {
     display: flex;
     justify-content: center;
