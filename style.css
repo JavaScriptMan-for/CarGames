@@ -27,24 +27,30 @@ img {
     z-index: 2;
     width: 6.4167vw;
     display: inline-block;
+    height: 5vh;
 }
 #pause {
     margin-left: 94%;
     position: absolute;
     margin-top: 10px;
 }
-.roud {
-    position: absolute;
-}
+
 #left {
-    margin-left: 1.0417vw;
-    margin-top: -17.1111vh;
+    /* margin-top: -7.1111vh; */
+    
 }
 #right {
-    margin-left: 10.25vw;
-    margin-top: -17.1111vh;
+    /* margin-left: 10.25vw;
+    margin-top: -7.1111vh; */
 }
 #bib {
-    margin-left: 17.50vw;
-    margin-top: -17.1111vh;
+    /* margin-left: 17.50vw;
+    margin-top: -7.1111vh; */
+}
+.flex {
+    display: flex;
+    justify-content: center;
+    row-gap: 17.8125vw;
+    margin-left: -7vw;
+    
 }
