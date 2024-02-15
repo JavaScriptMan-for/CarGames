@@ -13,7 +13,7 @@ canvs.style.bottom = 0;
 
 let animCadr = 0.1;
 let score = 0;
-let mainScore = 0;
+let mainScore = localStorage.getItem("best");
 
 //Выведение счёта на экран
 
@@ -131,7 +131,7 @@ let promise = new Promise((resolve,reject)=>{
             //Увеличение скорости по мере роста счёта.
             animCadr += 0.002
         }
-        if(score >= mainScore || localStorage.getItem("best") <= score) {
+        if(score > mainScore || localStorage.getItem("yesteday") < score) {
             mainScore = score;
             localStorage.setItem("best",mainScore)
         }
