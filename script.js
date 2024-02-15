@@ -8,12 +8,15 @@ function funct () {
 const canvs = document.querySelector('#canvas');
 const ctx = canvs.getContext("2d");
 canvs.style.bottom = 0;
+let isAsert = 0;
 
-//Создание переменных для подсчёта очков и скорости машины
+//Создание переменных для подсчёта очков, лучшего результата и скорости машины
 
 let animCadr = 0.1;
 let score = 0;
 let mainScore = localStorage.getItem("best");
+
+
 
 //Выведение счёта на экран
 
@@ -24,6 +27,8 @@ document.querySelector('#score').innerHTML = "Счёт: " + score;
 const backround = new Image();
 const car = new Image();
 const zabor = new Image();
+const zabor_2 = new Image();
+const stone = new Image();
 
 const breakcar = new Audio();
 const rotate = new Audio();
@@ -37,12 +42,23 @@ let sRc = "src/img/car.png";
 if(m == 'false') {
     sRc = localStorage.getItem("car")
 }
-/*d*/ 
 
+//Рандом препятствий
+
+let barriers = [zabor,zabor_2,stone];
+let randBarr;
+let rand = zabor;
+setInterval(()=>{
+    if(isAsert % 2 == 0) {
+        randBarr = barriers[Math.floor(Math.random()*3)];
+    }
+},10)
 
 backround.src = "src/img/back.png";
 car.src = sRc;
 zabor.src = "src/img/zabor.png";
+zabor_2.src = "src/img/zabor_2.png";
+stone.src = "src/img/stone.png";
 
 breakcar.src = "src/audio/breack.mp3";
 run.src = "src/audio/run.mp3";
@@ -75,7 +91,9 @@ class GameObject {
 }
 //Для рандомизации появления препятствий
 let xPos = [137,110,164].reverse();
-let xPos2 = [110,136,164]
+let xPos2 = [110,136,164];
+
+
 
 //Создание объектов на основе класса, на основе которого будут описанны их координаты 
 
@@ -92,14 +110,16 @@ let game = setInterval(()=>{
     ctx.drawImage(backround,back.x,back.y, 100, 150);
     ctx.drawImage(backround,back_2.x,back_2.y,100,150)
     ctx.drawImage(car, carObj.x,carObj.y, 25,40);
-    ctx.drawImage(zabor, barrier.x, barrier.y, 25,20);
-    ctx.drawImage(zabor,barrier_2.x,barrier_2.y,25,20);
+    ctx.drawImage(rand, barrier.x, barrier.y, 25,20);
+    ctx.drawImage(rand,barrier_2.x,barrier_2.y,25,20);
     //Если препятствие проехали, то появляется новое
     if(barrier.y > 144) {
         barrier.x =  xPos[Math.floor(Math.random()*3)];
         barrier.y = 20;
         barrier_2.y = 20;
         scored.play();
+        isAsert++
+        rand = randBarr;
         score++;
         document.querySelector('#score').innerHTML = "Счёт: " + score;
     }
