@@ -2,11 +2,17 @@
 document.querySelector('.butt').addEventListener('click', ()=>{
     document.location.href = "main.html"
 });
-document.querySelector("#record").innerHTML = localStorage.getItem("best");
+let rec = localStorage.getItem("best");
+document.querySelector("#record").innerHTML = rec;
 
-let date =  localStorage.getItem("yesteday");
+let date =  localStorage.getItem("mark");
 
-date === "" ? date = "Ничего...": document.querySelector('#reating').innerHTML = localStorage.getItem("yesteday");
+if(date == null) {
+    document.querySelector('#reating').innerHTML = "Ничего..."
+} else {
+    document.querySelector('#reating').innerHTML = date;
+}
+
 
 localStorage.setItem('m', true)
 
