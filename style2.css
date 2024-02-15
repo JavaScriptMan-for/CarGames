@@ -19,16 +19,16 @@ body {
     height: 37.0370vh;
     margin-left: 10px;
     margin-bottom: 0px;
-    overflow: hidden;
+    /* overflow: hidden; */
     z-index: 1px;
     filter: blur(0px);
 }
 
 .menu {
-    width: 63.9199vw;
-    height: 37.0370vh;
-    margin-bottom: 0px;
-    overflow: hidden;
+    width: 61.9199vw;
+    height: 40.0370vh;
+    margin-bottom: 100px;
+    overflow: unset;
     z-index: 1;
     filter: blur(0px);
 }
@@ -37,7 +37,7 @@ body {
     height: 500px;
     margin-left: 5px;
     margin-bottom: 0px;
-    overflow: hidden;
+    /* overflow: hidden; */
     z-index: 1;
     filter: blur(0px);
 }
@@ -104,7 +104,7 @@ a {
       
     }
     .menu {
-        height: 128.0370vh;
+        height: 139.0370vh;
         margin-top: 6.4815vh;
     }
     .butt a {
@@ -123,5 +123,6 @@ a {
 #a_text {
     margin: 0;
     padding: 0;
+    height: 70px;
 }
 /*aa*/
