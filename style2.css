@@ -89,6 +89,7 @@ a#but {
 #a_text {
     font-size: 20px;
     color: rgb(142, 231, 231);
+    z-index: 3;
 }
 .h {
     color: rgb(228, 164, 45);
