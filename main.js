@@ -5,14 +5,9 @@ document.querySelector('.butt').addEventListener('click', ()=>{
 let rec = localStorage.getItem("best");
 document.querySelector("#record").innerHTML = rec;
 
-let date =  localStorage.getItem("mark");
+let date =  localStorage.getItem("yesteday");
 
-if(date == null) {
-    document.querySelector('#reating').innerHTML = "Ничего..."
-} else {
-    document.querySelector('#reating').innerHTML = date;
-}
-
+document.querySelector('#reating').innerHTML = date;
 
 localStorage.setItem('m', true)
 

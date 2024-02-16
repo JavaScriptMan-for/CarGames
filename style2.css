@@ -1,5 +1,7 @@
 body {
-    background: url("src/img/backround-image\ \(2\).png") center;
+    background: url("src/img/backround.png") center;
+    background-repeat: no-repeat;
+    background-size: cover;
     filter: brightness(30%);
 }
 * {
@@ -11,7 +13,7 @@ body {
     display: flex;
     height: 90vh;
     flex-wrap: wrap;
-    z-index: 1px;
+    z-index: 1;
     filter: blur(0px);
 }
 .info {
@@ -26,8 +28,8 @@ body {
 
 .menu {
     width: 61.9199vw;
-    height: 40.0370vh;
-    margin-bottom: 100px;
+    height: 46.0370vh;
+    /* margin-bottom: 100px; */
     overflow: unset;
     z-index: 1;
     filter: blur(0px);
@@ -37,29 +39,27 @@ body {
     height: 500px;
     margin-left: 5px;
     margin-bottom: 0px;
-    /* overflow: hidden; */
     z-index: 1;
     filter: blur(0px);
 }
 h2 {
     font-size: 40px;
-    font-weight: 3000;
+    font-weight: 13000;
     font-family: Arial, Helvetica, sans-serif;
     font-style: unset;
     z-index: 1;
     filter: blur(0px);
-    color: rgb(255, 0, 0);
+    color: black;
 }
 h3 {
     font-size: 30px;
-    font-weight: 10000;
-    font-family: Arial, Helvetica, sans-serif;
-    font-style: unset;
+    font-weight: 100000;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
     z-index: 1;
-    color: rgb(255, 115, 0);
+    color:  aqua
 }
 span {
-    color: rgb(125, 125, 255);
+    color: white;
     z-index: 1;
     font-weight: bold;
     filter: contrast(4), brightness(200%);
@@ -67,62 +67,108 @@ span {
 .butt {
     display: inline-block;
     border-radius: 35px;
-    border: 2px solid red;
+    border: 2px solid rgb(5, 139, 95);
     width: 20.8333vw;
     height: 100px;
-    background-color: red;
+    background-color: rgb(0, 255, 170);
     margin-left: 30%;
-    margin-top: 6.6296vh;
+    /* margin-top: -16vh; */
     cursor: pointer;
     transition: 200ms;
 }
-a {
+a#but {
     display: inline-block;
     text-decoration: none;
-    font-size: 190%;
+    font-size: 20px;
     text-align: center;
-    margin-left: 20%;
+    margin-left: 1vw;
     margin-top: 2.7037vh;
-    color: blue;
+    color: rgb(190, 190, 89);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#a_text {
+    font-size: 20px;
+    color: rgb(142, 231, 231);
+}
+.h {
+    color: rgb(228, 164, 45);
 }
 @media (hover: none) {
     .butt:active {
-        background-color: rgb(255, 56, 56);
+        background-color: rgb(43, 133, 103);
     }
 }
 @media (hover : hover) {
     .butt:hover {
-        background-color: rgb(255, 56, 56);
-    }
-}
-@media  screen and (max-width: 614px) {
-    body {
-        background: url("src/img/backround-image\ \(2\).png") center;
-        height: 100%;
-        width: 100%;
-        filter: brightness(30%);
-      
-    }
-    .menu {
-        height: 139.0370vh;
-        margin-top: 6.4815vh;
-    }
-    .butt a {
-        margin-left: 2vw;
-        font-size: 130%;
-    }
-    .info {
-        margin-top: -56px;
-        padding-top: 0px;
-    
-    }
-    .butt {
-        margin-top: 100px;
+        background-color: rgb(43, 133, 103);
     }
 }
 #a_text {
     margin: 0;
     padding: 0;
     height: 70px;
+    white-space: none;
+    text-decoration: none;
+    color: rgb(39, 39, 255);
 }
-/*aa*/
+@media screen and (max-width: 655px) {
+    .butt {
+        margin-left: 0px;
+    }
+}
+@media screen and (max-width: 1047px) {
+    .butt {
+        margin-top: 15vh;
+    }
+}
+@media screen and (max-width: 778px) {
+    .butt {
+        margin-top: 25vh;
+    }
+}
+@media screen and (max-width: 669px) {
+    .butt {
+        margin-top: 35vh;
+    }
+    body {
+        background-repeat: repeat-y;
+    }
+}
+@media screen and (max-width: 614px) {
+    .butt {
+        margin-top: 50vh;
+    }
+}
+@media screen and(max-width: 628px) {
+    #but {
+        margin-left: 0px;
+    }
+}
+@media screen and(max-width: 544px) {
+   .butt  {
+        font-size: 15px;
+    }
+}
+@media screen and (max-width: 477px) {
+    .butt {
+        margin-top: 70vh;
+    }
+}
+@media screen and (max-width: 402px) {
+    .butt {
+        margin-top: 80vh;
+    }
+}
+@media screen and (max-width: 364px) {
+    .butt {
+        margin-top: 90vh;
+    }
+    #but {
+        font-size: 10px;
+    }
+}
+@media screen and (max-width: 340px) {
+    .butt {
+        margin-top: 100vh;
+    }
+}

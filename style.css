@@ -33,13 +33,42 @@ img {
     margin-left: 94%;
     position: absolute;
     margin-top: 10px;
+    opacity: 0;
 }
-
-
 .flex {
     display: flex;
     justify-content: center;
     row-gap: 17.8125vw;
-    margin-left: -7vw;
-    
+    margin-left: -7vw;   
+    opacity: 0;
+}
+#play {
+    width: 16.2500vw;
+    height: 20.8889vh;
+}
+#flexbox {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media screen and (max-width: 1252px) {
+    #play {
+        height: 15vh;
+        margin-top: -500px;
+    }
+}
+@media screen and (max-width: 655px) {
+    #play {
+        height: 10vh;
+        margin-top: -700px;
+    }
+}
+@media screen and (max-width: 467px) {
+    #play {
+        height: 5vh;
+        margin-top: -800px;
+    }
 }

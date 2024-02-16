@@ -1,10 +1,13 @@
 /*Раздел - начало*/ 
-let int = 0; //Переменная для того, чтобы функция funct выполнялась один раз при загрузке страницы 
+let int = false; //Переменная для того, чтобы функция funct выполнялась один раз при загрузке страницы 
 function funct () {
-    if(int === 0) {
-    int = 1;
+    if(int === false) {
+    int = true;
+    //Стили
+ document.querySelector("#play").style.cssText = `opacity: 0`
+document.querySelector(".flex").style.cssText = `opacity: 1`
+document.querySelector('#pause').style.cssText = `opacity: 1`
     //Получение канваса и ctx
-
 const canvs = document.querySelector('#canvas');
 const ctx = canvs.getContext("2d");
 canvs.style.bottom = 0;
@@ -38,7 +41,6 @@ const run = new Audio();
 const scored = new Audio();
 const bib = new Audio();
 
-//Объявления пути для файлов игры
 let m = localStorage.getItem("m")
 let sRc = "src/img/car.png";
 if(m == 'false') {
@@ -56,6 +58,8 @@ setInterval(()=>{
     }
 },10)
 
+//Объявления пути для файлов игры
+
 backround.src = "src/img/back.png";
 car.src = sRc;
 zabor.src = "src/img/zabor.png";
@@ -69,6 +73,7 @@ run.src = "src/audio/run.mp3";
 rotate.src = "src/audio/rotate.mp3";
 scored.src = "src/audio/scored.mp3";
 bib.src = "src/audio/bib.mp3";
+
 //Проигрывание звука гуда машины
 
 run.volume = 1;
@@ -105,7 +110,6 @@ let barrier_2 = new GameObject(xPos2[Math.floor(Math.random()*3)],'barrier_2')
 let carObj = new GameObject(137,110, 'car');
 let back = new GameObject(100,0,'backround');
 let back_2 = new GameObject(100,0,'backround');
-
 
 //Прорисовка всех картинок 
 
@@ -158,7 +162,6 @@ let promise = new Promise((resolve,reject)=>{
             localStorage.setItem("best",mainScore)
         }
     },10);
-
     
     //Добавление управления
 
@@ -184,6 +187,9 @@ let promise = new Promise((resolve,reject)=>{
         alert("Пауза...");
     }
   }
+
+  //Функция для определения умер игрок или нет
+
 let findDead = setInterval(()=>{
     if(carObj.x === 110 && barrier.x === 110 && barrier.y >= 92) {
         gameOver();
@@ -214,30 +220,35 @@ let findDead = setInterval(()=>{
     clearInterval(game);
     clearInterval(findDead);
     localStorage.setItem("yesteday", score);
-    let inform = prompt("Вы проиграли! Напишите отзыв о этой игре!");
-    localStorage.setItem("mark", inform)
+     window.alert("Вы проиграли! В следующий раз получится лучше!");
     document.location.reload();
   }
 
     //Управление для телефонов
+
     document.querySelector('#left').addEventListener('click', left);
     document.querySelector('#right').addEventListener('click', right);
     document.querySelector('#bib').addEventListener('click', bibo);
     document.querySelector('#pause').addEventListener('click', pause);
+    //Поворот влево
     function left() {
         rotate.play()
         carObj.x -= 27;
     if(carObj.x !== 110 && carObj.x !== 137 ) {gameOver()}
       }
+      //Поворот вправо
       function right () {
         rotate.play();
         carObj.x += 27;
         if( carObj.x !== 137 && carObj.x !== 164) {gameOver()}
       }
+      //Гудок
       function bibo() {
         bib.play();
       }
+      //Поставить игру на паузу
       function pause() {
+        run.pause()
         alert("Пауза...");
       }
    }
