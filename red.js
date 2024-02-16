@@ -20,6 +20,18 @@ setInterval(()=> {
         localStorage.setItem("car","src/img/car_5.png" ) ;
         i = 5;
      }
+     if(document.querySelector('#sel').value == "o_6") {
+        localStorage.setItem("car","src/img/car_6.png" ) ;
+        i = 6;
+     }
+     if(document.querySelector('#sel').value == "o_7") {
+        localStorage.setItem("car","src/img/car_7.png" ) ;
+        i = 7;
+     }
+     if(document.querySelector('#sel').value == "o_8") {
+        localStorage.setItem("car","src/img/car_8.png" ) ;
+        i = 8;
+     }
 },100)
 
 const cnv = document.querySelector('canvas');
@@ -30,12 +42,18 @@ const Car_2 = new Image();
 const Car_3 = new Image();
 const Car_4 = new Image();
 const Car_5 = new Image();
+const Car_6 = new Image();
+const Car_7 = new Image();
+const Car_8 = new Image();
 
 Car_1.src = "src/img/car.png";
 Car_2.src = "src/img/car_2.png";
 Car_3.src = "src/img/car_3.png";
 Car_4.src = "src/img/car_4.png";
 Car_5.src = "src/img/car_5.png";
+Car_6.src = "src/img/car_6.png";
+Car_7.src = "src/img/car_7.png";
+Car_8.src = "src/img/car_8.png";
 
 let im = Car_1;
 
@@ -56,7 +74,17 @@ setInterval(()=>{
     } else if(i === 5) {
         im = Car_5;
         localStorage.setItem("m", false)
+    } else if( i === 6) {
+        im = Car_6;
+        localStorage.setItem("m", false)
+    } else if( i === 7) {
+        im = Car_7;
+        localStorage.setItem("m", false)
+    } else if( i === 8) {
+        im = Car_8;
+        localStorage.setItem("m", false)
     }
+
     ctx.fillStyle = "white";
     ctx.fillRect(0,0, cnv.width, cnv.height)
     ctx.drawImage(im, 0,0, 100, 100)

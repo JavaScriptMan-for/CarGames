@@ -30,6 +30,7 @@ const zabor = new Image();
 const zabor_2 = new Image();
 const stone = new Image();
 const spike = new Image();
+const darkstone = new Image();
 
 const breakcar = new Audio();
 const rotate = new Audio();
@@ -46,12 +47,12 @@ if(m == 'false') {
 
 //Рандом препятствий
 
-let barriers = [zabor,zabor_2,stone, spike];
+let barriers = [zabor,zabor_2,stone, spike, darkstone];
 let randBarr;
 let rand = zabor;
 setInterval(()=>{
     if(isAsert % 2 == 0) {
-        randBarr = barriers[Math.floor(Math.random()*4)];
+        randBarr = barriers[Math.floor(Math.random()*5)];
     }
 },10)
 
@@ -61,6 +62,7 @@ zabor.src = "src/img/zabor.png";
 zabor_2.src = "src/img/zabor_2.png";
 stone.src = "src/img/stone.png";
 spike.src = "src/img/spike.png";
+darkstone.src = "src/img/darkstone.png";
 
 breakcar.src = "src/audio/breack.mp3";
 run.src = "src/audio/run.mp3";
@@ -142,8 +144,7 @@ let promise = new Promise((resolve,reject)=>{
  promise.then((onResolve, onReject) => {
     console.log(onReject);
     console.log(onResolve);
-    return onResolve;
-   
+    return onResolve; 
 })  
     setInterval(()=>{
         barrier.y += animCadr;
