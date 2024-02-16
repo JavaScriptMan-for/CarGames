@@ -29,6 +29,7 @@ const car = new Image();
 const zabor = new Image();
 const zabor_2 = new Image();
 const stone = new Image();
+const spike = new Image();
 
 const breakcar = new Audio();
 const rotate = new Audio();
@@ -45,12 +46,12 @@ if(m == 'false') {
 
 //Рандом препятствий
 
-let barriers = [zabor,zabor_2,stone];
+let barriers = [zabor,zabor_2,stone, spike];
 let randBarr;
 let rand = zabor;
 setInterval(()=>{
     if(isAsert % 2 == 0) {
-        randBarr = barriers[Math.floor(Math.random()*3)];
+        randBarr = barriers[Math.floor(Math.random()*4)];
     }
 },10)
 
@@ -59,6 +60,7 @@ car.src = sRc;
 zabor.src = "src/img/zabor.png";
 zabor_2.src = "src/img/zabor_2.png";
 stone.src = "src/img/stone.png";
+spike.src = "src/img/spike.png";
 
 breakcar.src = "src/audio/breack.mp3";
 run.src = "src/audio/run.mp3";
@@ -90,10 +92,9 @@ class GameObject {
  }
 }
 //Для рандомизации появления препятствий
+
 let xPos = [137,110,164].reverse();
 let xPos2 = [110,136,164];
-
-
 
 //Создание объектов на основе класса, на основе которого будут описанны их координаты 
 
@@ -201,8 +202,7 @@ let findDead = setInterval(()=>{
     if(carObj.x === 164 && barrier_2.x === 164 && barrier_2.y >= 92) {
         gameOver();
     }
-},10)
-
+},1)
 
     //Функция окончания игры
 
