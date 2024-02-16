@@ -54,19 +54,25 @@ img {
     justify-content: center;
     align-items: center;
 }
-@media screen and (max-width: 1252px ) and (min-height: 603px) {
+@media screen and (max-width: 1252px ) and (max-height: 603px) {
     #play {
         height: 15vh;
         margin-top: -500px;
     }
 }
-@media screen and (max-width: 655px)  and (min-height: 603px){
+@media screen and (max-width: 655px)  and (max-height: 603px){
     #play {
         height: 10vh;
         margin-top: -700px;
     }
 }
-@media screen and (max-width: 467px)  and (min-height: 603px){
+@media screen and (max-width: 467px)  and (max-height: 603px){
+    #play {
+        height: 5vh;
+        margin-top: -800px;
+    }
+}
+@media screen and (max-width: 367px)  and (max-height: 603px){
     #play {
         height: 5vh;
         margin-top: -800px;
