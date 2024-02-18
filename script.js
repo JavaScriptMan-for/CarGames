@@ -1,4 +1,8 @@
 /*Раздел - начало*/ 
+if(localStorage.getItem("conf") == "true") {
+    document.location.href = "index.html";
+    localStorage.setItem("conf", "false")
+}
 let int = false; //Переменная для того, чтобы функция funct выполнялась один раз при загрузке страницы 
 function funct () {
     if(int === false) {
@@ -81,7 +85,7 @@ bib.src = "src/audio/bib.mp3";
 run.volume = 1;
 run.play(); 
 setInterval(()=> {
-    run.volume = 1;
+    run.volume = 0.8;
     run.play(); 
 },500)
 
@@ -117,7 +121,7 @@ let back_2 = new GameObject(100,0,'backround');
 
 let game = setInterval(()=>{
     ctx.drawImage(backround,back.x,back.y, 100, 150);
-    ctx.drawImage(backround,back_2.x,back_2.y,100,150)
+    ctx.drawImage(backround,back_2.x,back_2.y, 100, 150);
     ctx.drawImage(car, carObj.x,carObj.y, 25,40);
     ctx.drawImage(rand, barrier.x, barrier.y, 25,20);
     ctx.drawImage(rand,barrier_2.x,barrier_2.y,25,20);
@@ -132,26 +136,26 @@ let game = setInterval(()=>{
         score++;
         document.querySelector('#score').innerHTML = "Счёт: " + score;
     }
-},10);
+},1);
 
 /*Раздел - механика игры*/
 // Для иметации движения машины
 let promise = new Promise((resolve,reject)=>{
-   let backAnim = setInterval(()=>{
-        back_2.y+=30;
-        setTimeout(()=>{
-            back_2.y-=30;
-        })
-    },1)
-   let err = new Error('Бред')
-    resolve(backAnim);
-    reject(err)
-}) 
- promise.then((onResolve, onReject) => {
-    console.log(onReject);
-    console.log(onResolve);
-    return onResolve; 
-})  
+    let backAnim = setInterval(()=>{
+         back_2.y+=30;
+         setTimeout(()=>{
+             back_2.y-=30;
+         })
+     },1)
+    let err = new Error('Бред')
+     resolve(backAnim);
+     reject(err)
+ }) 
+  promise.then((onResolve, onReject) => {
+     console.log(onReject);
+     console.log(onResolve);
+     return onResolve; 
+ })  
     setInterval(()=>{
         barrier.y += animCadr;
         barrier_2.y += animCadr;
@@ -186,7 +190,11 @@ let promise = new Promise((resolve,reject)=>{
     }
     if(e.keyCode == 27) {
         run.pause();
-        alert("Пауза...");
+        let qw = confirm("Если остаётесь в меню паузы ничего не нажимайте. Если хотите перейти в главное меню нажмите ДА, если хотите продолжить игру, нжмите НЕТ.")
+        if(qw == true) {document.location.href = "index.html";}
+     else if(qw == false) {
+             console.log("Вы продолжили игру")
+         }
     }
   }
 
@@ -211,7 +219,7 @@ let findDead = setInterval(()=>{
     if(carObj.x === 164 && barrier_2.x === 164 && barrier_2.y >= 92) {
         gameOver();
     }
-},0.01)
+},0.1)
 
     //Функция окончания игры
 
@@ -222,7 +230,8 @@ let findDead = setInterval(()=>{
     clearInterval(game);
     clearInterval(findDead);
     localStorage.setItem("yesteday", score);
-     window.alert("Вы проиграли! В следующий раз получится лучше!");
+   let conf =  window.confirm("Вы проиграли! Переходите в главное меню?");
+   localStorage.setItem("conf", conf)
     document.location.reload();
   }
 
@@ -251,7 +260,11 @@ let findDead = setInterval(()=>{
       //Поставить игру на паузу
       function pause() {
         run.pause()
-        alert("Пауза...");
+       let qw = confirm("Если остаётесь в меню паузы ничего не нажимайте. Если хотите перейти в главное меню нажмите ДА, если хотите продолжить игру, нжмите НЕТ.")
+           if(qw == true) {document.location.href = "index.html";}
+        else if(qw == false) {
+                console.log("Вы продолжили игру")
+            }
       }
    }
     }

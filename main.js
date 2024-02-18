@@ -10,12 +10,13 @@ if(ry > 80 && localStorage.getItem("b") == 'false') {
     fi ()
 
 }
-function pL() {
-    music.play()
-}
+
 document.addEventListener('click', pL)
 document.addEventListener('scroll', pL)
 
+function pL() {
+    music.play()
+}
 document.querySelector('.butt').addEventListener('click', ()=>{
     document.location.href = "main.html"
 });
