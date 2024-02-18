@@ -1,0 +1,17 @@
+{
+    "name": "CarGames",
+    "version": "v2.64",
+    "author": "Minevsky Ivan",
+    "country" : "Russia",
+    "language": "Rissian",
+
+    "languagesProgram": {
+        "htnl": "true",
+        "css": "true",
+        "js": "true",
+        "php": "false",
+        "swift": "false",
+        "othres": "false"
+    }
+    
+}
