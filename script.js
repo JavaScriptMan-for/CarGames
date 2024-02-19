@@ -198,6 +198,7 @@ let promise = new Promise((resolve,reject)=>{
          }
     }
     if(e.keyCode == 82) {
+        run.pause();
         let config = confirm("Хотите отредактировать машину? Игра перезапустится!");
         if(config === true) {
             document.location.href = "redact.html";
