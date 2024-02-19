@@ -190,11 +190,19 @@ let promise = new Promise((resolve,reject)=>{
     }
     if(e.keyCode == 27) {
         run.pause();
-        let qw = confirm("Если остаётесь в меню паузы ничего не нажимайте. Если хотите перейти в главное меню нажмите ДА, если хотите продолжить игру, нжмите НЕТ.")
+        let qw = confirm("Если остаётесь в меню паузы ничего не нажимайте. Если хотите перейти в главное меню нажмите ДА, если хотите продолжить игру, нажмите НЕТ.")
         if(qw == true) {document.location.href = "index.html";}
      else if(qw == false) {
              console.log("Вы продолжили игру")
          }
+    }
+    if(e.keyCode == 82) {
+        let config = confirm("Хотите отредактировать машину?");
+        if(config === true) {
+            document.location.href = "redact.html";
+        } else {
+            console.log("Возвращение в игру")
+        }
     }
   }
 

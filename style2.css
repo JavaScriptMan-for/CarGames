@@ -110,7 +110,25 @@ a#but {
     height: 70px;
     white-space: none;
     text-decoration: none;
-    color: rgb(39, 39, 255);
+    color: rgb(25, 99, 74);
+}
+a {
+    margin-right: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(25, 99, 74);
+    text-decoration: none;
+    font-size: 20px;
+    transition: 200ms;
+}
+@media (hover: none) {
+    a:active {
+        color: rgb(111, 185, 161);
+    }
+}
+@media (hover: hover) {
+    a:hover {
+        color: rgb(111, 185, 161);
+    }
 }
 @media screen and (max-width: 655px) {
     .butt {
