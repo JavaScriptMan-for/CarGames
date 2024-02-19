@@ -134,6 +134,7 @@ let game = setInterval(()=>{
         isAsert++
         rand = randBarr;
         score++;
+        localStorage.setItem("yesteday", score)
         document.querySelector('#score').innerHTML = "Счёт: " + score;
     }
 },1);
@@ -197,7 +198,7 @@ let promise = new Promise((resolve,reject)=>{
          }
     }
     if(e.keyCode == 82) {
-        let config = confirm("Хотите отредактировать машину?");
+        let config = confirm("Хотите отредактировать машину? Игра перезапустится!");
         if(config === true) {
             document.location.href = "redact.html";
         } else {
@@ -212,19 +213,19 @@ let findDead = setInterval(()=>{
     if(carObj.x === 110 && barrier.x === 110 && barrier.y >= 92) {
         gameOver();
     }
-    if(carObj.x == 137 && barrier.x === 137 && barrier.y >= 92) {
+    if(carObj.x == 137 && barrier.x <= 137 && barrier.y >= 92) {
         gameOver();
     }
-    if(carObj.x == 164 && barrier.x === 164 && barrier.y >= 92) {
+    if(carObj.x == 164 && barrier.x <= 164 && barrier.y >= 92) {
         gameOver();
     }
-    if(carObj.x === 110 && barrier_2.x === 110 && barrier_2.y >= 92) {
+    if(carObj.x === 110 && barrier_2.x <= 110 && barrier_2.y >= 92) {
         gameOver();
     }
-    if(carObj.x === 137 && barrier_2.x === 137 && barrier_2.y >= 92) {
+    if(carObj.x === 137 && barrier_2.x <= 137 && barrier_2.y >= 92) {
         gameOver();
     }
-    if(carObj.x === 164 && barrier_2.x === 164 && barrier_2.y >= 92) {
+    if(carObj.x === 164 && barrier_2.x <= 164 && barrier_2.y >= 92) {
         gameOver();
     }
 },0.1)
@@ -239,7 +240,7 @@ let findDead = setInterval(()=>{
     clearInterval(findDead);
     localStorage.setItem("yesteday", score);
    let conf =  window.confirm("Вы проиграли! Переходите в главное меню?");
-   localStorage.setItem("conf", conf)
+   localStorage.setItem("conf", conf);
     document.location.reload();
   }
 
