@@ -213,19 +213,19 @@ let findDead = setInterval(()=>{
     if(carObj.x === 110 && barrier.x === 110 && barrier.y >= 92) {
         gameOver();
     }
-    if(carObj.x == 137 && barrier.x == 137 && barrier.y >= 92) {
+    if(carObj.x == 137 && barrier.x === 137 && barrier.y >= 92) {
         gameOver();
     }
-    if(carObj.x == 164 && barrier.x == 164 && barrier.y >= 92) {
+    if(carObj.x == 164 && barrier.x === 164 && barrier.y >= 92) {
         gameOver();
     }
-    if(carObj.x === 110 && barrier_2.x == 110 && barrier_2.y >= 92) {
+    if(carObj.x === 110 && barrier_2.x === 110 && barrier_2.y >= 92) {
         gameOver();
     }
-    if(carObj.x === 137 && barrier_2.x == 137 && barrier_2.y >= 92) {
+    if(carObj.x === 137 && barrier_2.x === 137 && barrier_2.y >= 92) {
         gameOver();
     }
-    if(carObj.x === 164 && barrier_2.x == 164 && barrier_2.y >= 92) {
+    if(carObj.x === 164 && barrier_2.x === 164 && barrier_2.y >= 92) {
         gameOver();
     }
 },0.1)
