@@ -1,4 +1,6 @@
 /*Раздел - начало*/ 
+let made = true;
+document.querySelector("#pauseWind").close()
 if(localStorage.getItem("conf") == "true") {
     document.location.href = "index.html";
     localStorage.setItem("conf", "false")
@@ -11,6 +13,7 @@ function funct () {
  document.querySelector("#play").style.cssText = `opacity: 0`
 document.querySelector(".flex").style.cssText = `opacity: 1`
 document.querySelector('#pause').style.cssText = `opacity: 1`
+document.querySelector('#pauseWind').style.cssText = `opacity: 1`
     //Получение канваса и ctx
 const canvs = document.querySelector('#canvas');
 const ctx = canvs.getContext("2d");
@@ -112,7 +115,7 @@ let xPos2 = [110,136,164];
 //Создание объектов на основе класса, на основе которого будут описанны их координаты 
 
 let barrier = new GameObject(xPos[Math.floor(Math.random()*3)],20,'barrier');
-let barrier_2 = new GameObject(xPos2[Math.floor(Math.random()*3)],'barrier_2')
+let barrier_2 = new GameObject(xPos2[Math.floor(Math.random()*3)],20,'barrier_2')
 let carObj = new GameObject(137,110, 'car');
 let back = new GameObject(100,0,'backround');
 let back_2 = new GameObject(100,0,'backround');
@@ -157,13 +160,15 @@ let promise = new Promise((resolve,reject)=>{
      console.log(onResolve);
      return onResolve; 
  })  
-    setInterval(()=>{
+
+  let barr =  setInterval(()=>{
         barrier.y += animCadr;
         barrier_2.y += animCadr;
         if(score % 10 === 0) {
             //Увеличение скорости по мере роста счёта.
             animCadr += 0.002
         }
+        localStorage.setItem("speed", animCadr)
         if(score > mainScore || localStorage.getItem("yesteday") < score) {
             mainScore = score;
             localStorage.setItem("best",mainScore)
@@ -191,11 +196,7 @@ let promise = new Promise((resolve,reject)=>{
     }
     if(e.keyCode == 27) {
         run.pause();
-        let qw = confirm("Если остаётесь в меню паузы ничего не нажимайте. Если хотите перейти в главное меню нажмите ДА, если хотите продолжить игру, нажмите НЕТ.")
-        if(qw == true) {document.location.href = "index.html";}
-     else if(qw == false) {
-             console.log("Вы продолжили игру")
-         }
+        pause()
     }
     if(e.keyCode == 82) {
         run.pause();
@@ -268,13 +269,47 @@ let findDead = setInterval(()=>{
         bib.play();
       }
       //Поставить игру на паузу
-      function pause() {
-        run.pause()
-       let qw = confirm("Если остаётесь в меню паузы ничего не нажимайте. Если хотите перейти в главное меню нажмите ДА, если хотите продолжить игру, нжмите НЕТ.")
-           if(qw == true) {document.location.href = "index.html";}
-        else if(qw == false) {
-                console.log("Вы продолжили игру")
-            }
+    async   function pause() {
+        document.querySelector(".flex").style.cssText = `opacity: 0`
+    document.querySelector('#pause').style.cssText = `opacity: 0`
+        run.pause() 
+        
+       await  document.querySelector('#pauseWind').show();
+        document.querySelector('#pauseWind').style.cssText = `opacity: 1`
+       clearInterval(barr)
+       
+       await setTimeout(() => {
+          document.querySelector('#pauseWind').close();
+          if(made) {
+            setInterval(()=>{
+                barrier.y += animCadr;
+                barrier_2.y += animCadr;
+                if(score % 10 === 0) {
+                    //Увеличение скорости по мере роста счёта.
+                    animCadr += 0.002
+                    localStorage.setItem("speed", animCadr)
+                }
+                if(score > mainScore || localStorage.getItem("yesteday") < score) {
+                    mainScore = score;
+                    localStorage.setItem("best",mainScore)
+                }
+            },10);
+            made = false
+            document.querySelector(".flex").style.cssText = `opacity: 1`
+            document.querySelector('#pause').style.cssText = `opacity: 1`
+          }
+       }, 3000); 
+
+       document.querySelector("#close").addEventListener('click', ()=>{
+            document.querySelector('#pauseWind').close();
+       })
+    
+            
+           
+        
+           
+       
+          
       }
    }
     }

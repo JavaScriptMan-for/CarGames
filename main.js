@@ -9,8 +9,8 @@ function fi () {
 }
 if(ry > 80 && localStorage.getItem("music") == 'false') {
     fi ()
-
 }
+document.querySelector(".menu").addEventListener("click",()=>{document.location.href = "redact.html"})
 
 document.addEventListener('click', pL)
 document.addEventListener('scroll', pL)
