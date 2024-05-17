@@ -1,0 +1,42 @@
+select {
+    color: rgb(12,12,23);
+    width: 300px;
+    font-size: 40px;
+    background-color: rgb(25, 99, 74);
+    border: 3px solid rgb(29, 34, 32);
+  accent-color: rgb(80, 179, 179);
+    color: rgb(180, 243, 243);
+    border-radius: 20px;
+}
+canvas {
+    display: block;
+    width: 700px;
+    height: 700px;
+    margin-top: 100px;
+    margin-left: 100px;
+}
+a {
+    margin-right: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(25, 99, 74);
+    text-decoration: none;
+    font-size: 20px;
+    transition: 200ms;
+}
+@media (hover: none) {
+    a:active {
+        color: rgb(111, 185, 161);
+    }
+}
+@media (hover: hover) {
+    a:hover {
+        color: rgb(111, 185, 161);
+    }
+}
+option {
+    background-color: rgb(25, 99, 74);
+    color: rgb(180, 243, 243);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    -webkit-text-stroke: 1px black;
+    text-shadow: 1px 1px 1px;
+}

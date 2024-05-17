@@ -1,0 +1,125 @@
+
+canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+    align-items: center;
+}
+h1 {
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    font-style: normal;
+    font-display: auto;
+    position: absolute;
+    display: flex;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+body {
+    background-image: url("img/backround-image\ \(2\).png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+}
+img {
+    z-index: 2;
+    width: 6.4167vw;
+    display: inline-block;
+    height: 5vh;
+}
+#pause {
+    margin-left: 94%;
+    position: absolute;
+    margin-top: 10px;
+    opacity: 0;
+}
+.flex {
+    display: flex;
+    justify-content: center;
+    row-gap: 17.8125vw;
+    margin-left: -7vw;   
+    opacity: 0;
+}
+#play {
+    width: 16.2500vw;
+    height: 20.8889vh;
+}
+#flexbox {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media screen and (max-width: 1252px ) and (max-height: 603px) {
+    #play {
+        height: 15vh;
+        margin-top: -500px;
+    }
+}
+@media screen and (max-width: 655px)  and (max-height: 603px){
+    #play {
+        height: 10vh;
+        margin-top: -700px;
+    }
+}
+@media screen and (max-width: 467px)  and (max-height: 603px){
+    #play {
+        height: 5vh;
+        margin-top: -800px;
+    }
+}
+@media screen and (max-width: 367px)  and (max-height: 603px){
+    #play {
+        height: 5vh;
+        margin-top: -800px;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: aqua;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    margin-right: 30px;
+}
+dialog {
+    position: absolute;
+    margin-top: -30%;
+}
+dialog button {
+    border: none;
+    border-radius: 8px;
+    width: 13vw;
+    height: 5vh;
+    background-color: red;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(109, 219, 183);
+    font-weight: 1000;
+    font-size: 10px;
+    cursor: pointer;
+}
+@media (hover: none) {
+   dialog #close:active {
+        background-color: rgb(145, 43, 43);
+    }
+    @media (hover: hover) {
+     dialog #close:hover {
+            background-color: rgb(145, 43, 43);
+        }
+    }
+  
+}
+dialog a {
+    color: rgb(58, 90, 79);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+dialog:first-child {
+    border: none;
+}
+li {
+    list-style-type: none;
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Гонки</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/logo.png">
+</head>
+<body>
+    <div id="flexbox"><img id="play" src="img/play.png" alt="Играть"></div>
+    <h1 id="score"></h1> <img  id="pause" style="width: 4.4167vw;" src="img/pause.png" alt="Пауза">
+   <canvas id="canvas"></canvas>
+   <div class="flex">
+    <img class="roud" id="left" style="display: inline-block; width: 6.4167vw; margin-left: 20px;" src="img/rightAndLeft.png" alt="Влево">
+    <img class="roud" id="bib" style="display: inline-block; width: 6.4167vw;" src="img/bib.png">
+    <img class="roud" id="right" style="display: inline-block; width: 6.4167vw; transform: rotate(180deg);" src="img/rightAndLeft.png" alt="Вправо">
+    <dialog  id="pauseWind">
+        <ul>
+            <li><a id="_1" href="index.html">На главную</a></li>  <br> <br> 
+            <li><a  id="_2" href="redact.html">Редактировать машину</a> <br></li>
+        </ul>
+        
+        
+        <p>На паузу поставить можно только один раз. Остальные разы будут не останавливать игру!</p>
+         <br>
+         <br>
+        <button id="close" type="button">Закрыть окно</button>
+       </dialog>
+</div>
+    <script src="script.js"></script>
+</body>
+</html>
+<!--s-->
